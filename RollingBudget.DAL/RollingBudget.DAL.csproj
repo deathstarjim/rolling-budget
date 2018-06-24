@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FDCommonTools">
+      <HintPath>..\LIB\FDCommonTools.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,11 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Maps\BillsMaps.cs" />
+    <Compile Include="Maps\PaymentTypeMaps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BillsRepository.cs" />
+    <Compile Include="Repositories\PaymentTypesRepository.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Maps\" />
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\RollingBudget.Core\RollingBudget.Core.csproj">
+      <Project>{a7a07788-c7ad-401d-aa45-c27136828ec3}</Project>
+      <Name>RollingBudget.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
